@@ -1,2 +1,2 @@
 # tic-toc-game
-tic-toc game written in java version 11.
+tic-toc game, maven project, written in java version 11.
