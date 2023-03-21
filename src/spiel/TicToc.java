@@ -64,14 +64,14 @@ public class TicToc {
 			// calcBoard();
 			printBoard();
 			calcStatus();
-			if(status != Game_Status.CONTINUE) {
-			gameResult();
+			if (status != Game_Status.CONTINUE) {
+				gameResult();
 			}
-			if(status == Game_Status.CONTINUE) {
-			if (player == Players.P1)
-				player = Players.P2;
-			else
-				player = Players.P1;
+			if (status == Game_Status.CONTINUE) {
+				if (player == Players.P1)
+					player = Players.P2;
+				else
+					player = Players.P1;
 			}
 		} while (true);
 	}
@@ -79,9 +79,9 @@ public class TicToc {
 	public static void printBoard() {
 
 		System.out.println(choice[0] + " | " + choice[1] + " | " + choice[2]);
-		System.out.println("---" + "---" +"---");
+		System.out.println("---" + "---" + "---");
 		System.out.println(choice[3] + " | " + choice[4] + " | " + choice[5]);
-		System.out.println("---" + "---" +"---");
+		System.out.println("---" + "---" + "---");
 		System.out.println(choice[6] + " | " + choice[7] + " | " + choice[8]);
 	}
 
@@ -196,17 +196,15 @@ public class TicToc {
 		}
 		System.out.println("Player1 Won:" + countP1Won + " || Drawn:" + countDrawn + " || Player2 won:" + countP2Won);
 		System.out.println("######################");
-		
-		
-		if(beginPlayer == Players.P1) {
+
+		if (beginPlayer == Players.P1) {
 			beginPlayer = Players.P2;
 			player = beginPlayer;
-			
-		}
-		else 
+
+		} else
 			beginPlayer = Players.P1;
-		    player = beginPlayer;
-		
+		player = beginPlayer;
+
 		choice = new char[9];
 	}
 }
