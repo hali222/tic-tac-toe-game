@@ -43,9 +43,9 @@ public class TicToc {
 
 		// inputs = {{1,0,0,1,0,5,1,0,1},{0,1,1,0,1,1,0,1,0}}
 		do {
+			Scanner sc = new Scanner(System.in);
 			status = Game_Status.CONTINUE;
 			if (player == Players.P1) {
-				Scanner sc = new Scanner(System.in);
 				int num;
 				do {
 					System.out.println("Player1, insert your number (1..9): ");
@@ -53,7 +53,6 @@ public class TicToc {
 				} while ((choice[num - 1] != 0));
 				choice[num - 1] = Symbol.X.getChar();
 			} else if (player == Players.P2) {
-				Scanner sc = new Scanner(System.in);
 				int num;
 				do {
 					System.out.println("Player2, insert your number (1..9): ");
@@ -62,6 +61,7 @@ public class TicToc {
 				choice[num - 1] = Symbol.O.getChar();
 			}
 			// calcBoard();
+			sc.close();
 			printBoard();
 			calcStatus();
 			if (status != Game_Status.CONTINUE) {
@@ -77,7 +77,6 @@ public class TicToc {
 	}
 
 	public static void printBoard() {
-
 		System.out.println(choice[0] + " | " + choice[1] + " | " + choice[2]);
 		System.out.println("---" + "---" + "---");
 		System.out.println(choice[3] + " | " + choice[4] + " | " + choice[5]);
@@ -200,11 +199,9 @@ public class TicToc {
 		if (beginPlayer == Players.P1) {
 			beginPlayer = Players.P2;
 			player = beginPlayer;
-
 		} else
 			beginPlayer = Players.P1;
 		player = beginPlayer;
-
 		choice = new char[9];
 	}
 }
