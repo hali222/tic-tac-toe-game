@@ -61,7 +61,6 @@ public class TicToc {
 				choice[num - 1] = Symbol.O.getChar();
 			}
 			// calcBoard();
-			sc.close();
 			printBoard();
 			calcStatus();
 			if (status != Game_Status.CONTINUE) {
